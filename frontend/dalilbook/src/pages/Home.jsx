@@ -1,6 +1,5 @@
 import React from 'react'
 import { HeartPlus } from "lucide-react";
-import React from "react";
 
 
 function Home() {
