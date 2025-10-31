@@ -52,17 +52,8 @@ function Home() {
 
 
   )
-    <div className="bg-red-400 pt-16">
-      Home Page
-      <DescriptionCard />
-      <FileUpload />
-      <ImageCard />
-      <NotesCard />
-      <TextCard />
-      <TopicsCard />
-      <VideoCard/>
-    </div>
-  );
+   
+
 }
 
 export default Home;
