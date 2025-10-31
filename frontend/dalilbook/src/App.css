@@ -1,3 +1,15 @@
 body{
   background-color: #f7f8fa;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* main.css or globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+}
+>>>>>>> 9d800c78491a4296f8c18f54eb596ff48f7f35ae
