@@ -2,6 +2,8 @@ import React from 'react'
 import { HeartPlus } from "lucide-react";
 import VideoCard from '/src/components/VideoCard/VideoCard.jsx';
 import SearchInput from '../components/SearchInput/SearchInput';
+import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
+
 
 function Topics({ count }) {
   return (

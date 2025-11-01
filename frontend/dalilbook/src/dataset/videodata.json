@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Introduction to React",
+            "description": "Learn the basics of React.js, including components, state, and props.",
+            "tags": [
+                "React",
+                "JavaScript",
+                "Frontend"
+            ],
+            "thumbnail": "https://example.com/thumbnails/react_intro.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Advanced React Patterns",
+            "description": "Explore advanced patterns in React development, including higher-order components and render props.",
+            "tags": [
+                "React",
+                "JavaScript",
+                "Advanced"
+            ],
+            "thumbnail": "https://example.com/thumbnails/react_advanced.jpg"
+        }
+    ]
+}

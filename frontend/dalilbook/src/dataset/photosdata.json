@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Sunset Over the Mountains",
+            "url": "https://example.com/photos/sunset.jpg",
+            "description": "A beautiful sunset over the mountains with vibrant colors.",
+            "tags": ["sunset", "mountains", "nature"]
+        },
+        {
+            "id": 2,
+            "title": "City Skyline at Night",
+            "url": "https://example.com/photos/city_skyline.jpg",
+            "description": "The city skyline illuminated at night with sparkling lights.",
+            "tags": ["city", "night", "skyline"]
+        },
+        {
+            "id": 3,
+            "title": "Forest Trail in Autumn",
+            "url": "https://example.com/photos/forest_trail.jpg",
+            "description": "A serene forest trail covered in autumn leaves.",
+            "tags": ["forest", "autumn", "trail"]
+        }
+    ]
+}
