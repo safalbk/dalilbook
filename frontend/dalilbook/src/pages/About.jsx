@@ -4,7 +4,7 @@ function About() {
   return (
     <div>
       <VideoCard/>
-      <p>dfdfddfdffdfdfdfdfdfdfdf</p>
+      <p>dfdfddfdffdfdfdfdfdfdfdfa</p>
     </div>
   )
 }
