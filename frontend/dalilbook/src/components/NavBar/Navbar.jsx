@@ -27,7 +27,7 @@ function NavBar() {
                 </div>
 
                 {/* Desktop Links */}
-                <div className="hidden sm:flex mr-24">
+                <div className="hidden md:flex mr-24">
                     <NavLink to="/" className={linkClasses}>
                         Dashboard
                     </NavLink>
@@ -63,7 +63,7 @@ function NavBar() {
                 {/* Hamburger Button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="sm:hidden h-9 mx-2"
+                    className="md:hidden h-9 mx-2"
                 >
                     <Menu size={32} />
                     {/* <GiHamburgerMenu size={32} /> */}
@@ -72,7 +72,7 @@ function NavBar() {
 
             {/* Mobile Menu */}
             <div
-                className={`${isOpen ? "block" : "hidden"} bg-white my-1 sm:hidden`}
+                className={`${isOpen ? "block" : "hidden"} bg-white my-1 md:hidden`}
             >
                 <NavLink
                     to="/"
