@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Sunset Over the Mountains",
+            "description": "A beautiful sunset captured over the rocky mountains.",
+            "tags": [
+                "sunset",
+                "mountains",
+                "nature"
+            ],
+            "text": "This note describes the stunning view of a sunset over the mountains, highlighting the vibrant colors and serene atmosphere."
+        },
+        {
+            "id": 2,
+            "title": "City Skyline at Night",
+            "description": "Notes on the city skyline illuminated at night.",
+            "tags": [
+                "city",
+                "night",
+                "skyline"
+            ],
+            "text": "This note captures the essence of a bustling city skyline at night, with lights twinkling and the urban landscape coming alive."
+        },
+        {
+            "id": 3,
+            "title": "Forest Trail Adventure",
+            "description": "Exploring the forest trails and the beauty of nature.",
+            "tags": [
+                "forest",
+                "trail",
+                "adventure"
+            ],
+            "text": "This note details an adventurous hike through forest trails, emphasizing the lush greenery and the sounds of wildlife."
+        },
+        {
+            "id": 4,
+            "title": "Ocean Waves and Beaches",
+            "description": "The calming effect of ocean waves on sandy beaches.",
+            "tags": [
+                "ocean",
+                "waves",
+                "beach"
+            ],
+            "text": "This note reflects on the soothing sounds of ocean waves crashing onto sandy beaches, creating a peaceful ambiance."
+        },
+        {
+            "id": 5,
+            "title": "Desert Dunes Exploration",
+            "description": "Journey through the vast desert dunes and their unique landscape.",
+            "tags": [
+                "desert",
+                "dunes",
+                "exploration"
+            ],
+            "text": "This note describes the experience of exploring vast desert dunes, highlighting the unique landscape and the challenges faced."
+        }
+        
+    ]
+}

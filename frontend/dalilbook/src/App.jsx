@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from './components/NavBar/Navbar';
 import Topic from './pages/Topic';
+import Videos from './pages/Videos';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,6 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/services" element={<Services />} /> */}
         <Route path="/topics" element={<Topic />} />
+       <Route path="/videos" element={<Videos />} />
+
       </Routes>
     </BrowserRouter>
     </>
