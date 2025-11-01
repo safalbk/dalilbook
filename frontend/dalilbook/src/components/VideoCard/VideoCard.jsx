@@ -14,7 +14,7 @@ const VideoCard = () => {
   ];
 
 return (
-    <div className="max-w-xl mx-auto bg-slate-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+    <div className="w-150 mx-auto bg-slate-100 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
       {/* Top Section: Image + Text */}
       <div className="flex flex-col md:flex-row p-5 gap-4">
         {/* Image */}
@@ -23,7 +23,7 @@ return (
             <img
               src={cardImage}
               alt="Card"
-              className="w-44 h-40 object-cover rounded-xl transform hover:scale-105 transition-transform duration-500"
+              className="w-70 h-50 object-cover rounded-xl transform hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
