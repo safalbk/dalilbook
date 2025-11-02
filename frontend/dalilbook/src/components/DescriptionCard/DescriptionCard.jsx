@@ -1,7 +1,7 @@
 import React from 'react'
 
 const DescriptionCard = ({
-  heading = "Card Heading",
+  heading = "Description Card",
   description = "This description card follows a clean, modern design — with the heading, description, and colorful tags arranged vertically and spanning the full width of the device.",
   tags = ["Design", "React", "TailwindCSS", "Responsive"],
 }) => {

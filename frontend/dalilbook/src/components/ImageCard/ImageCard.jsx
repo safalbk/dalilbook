@@ -3,7 +3,7 @@ import cardImage1 from "../../assets/images/CardImage.jpg";
 
 
 const ImageCard = ({
-  tags = ["Nature", "Photography", "Inspiration"],
+  tags = ["Image Card", "Photography", "Inspiration"],
 }) => {
   const colors = [
     "bg-pink-100 text-pink-700",

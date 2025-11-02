@@ -5,7 +5,7 @@ const NotesCard = ({
 Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.'”
 
 (Quran 39:53)`,
-  tags = ["Design", "React", "TailwindCSS", "Responsive"],
+  tags = ["Notes Card", "React", "TailwindCSS", "Responsive"],
 }) => {
   const colors = [
     "bg-pink-100 text-pink-700",

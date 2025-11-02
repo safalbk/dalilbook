@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const FileUpload = ({
-  heading = "Upload Your Files",
+  heading = "File Upload Card",
   tags = ["Documents", "Images", "Videos", "Others"],
 }) => {
   const [fileName, setFileName] = useState(null);
