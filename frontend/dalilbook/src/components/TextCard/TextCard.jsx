@@ -3,7 +3,7 @@ import React from 'react'
 const TextCard = ({
   description = "Page layouts look better with something in each section. Web page designers, content writers, and layout artists use lorem ipsum, also known as placeholder copy, to distinguish which areas on a page will hold advertisements"
 ,
-  tags = ["Design", "React", "TailwindCSS", "Responsive"],
+  tags = ["Text Card", "React", "TailwindCSS", "Responsive"],
 }) => {
   const colors = [
     "bg-pink-100 text-pink-700",
