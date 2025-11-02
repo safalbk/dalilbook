@@ -12,12 +12,18 @@ function Topic() {
   return (
     <div className="mt-20 gap-5">
       {/* <VideoList /> */}
+      <h1>videocard</h1>
       <VideoCard />
-      <DescriptionCard/>
-      <FileUpload/>
-      <ImageCard/>
-      <NotesCard/>
-      <TextCard/>
+      <h1>Description Card</h1>
+      <DescriptionCard />
+      <h1>File Upload Card</h1>
+      <FileUpload />
+      <h1>Image Upload Card</h1>
+      <ImageCard />
+      <h1> Notes Card</h1>
+      <NotesCard />
+      <h1>Text Card</h1>
+      <TextCard />
     </div>
   );
 }
