@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import cardImage from "/src/assets/images/CardImage.jpg";
-
 const VideoCard = ({
   title = "Video Title",
   description = "This is a short description for the video. Click 'More' to expand and see the full text if available.",
@@ -19,9 +18,9 @@ const VideoCard = ({
   ];
 
   return (
-    <div className="w-full md:w-[360px] md:h-[340px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+    <div className="w-full sm:w-[280px] md:w-[300px] lg:w-[320px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
       {/* Thumbnail */}
-      <div className="relative w-full h-[180px] overflow-hidden">
+      <div className="relative w-full h-[140px] overflow-hidden">
         <img
           src={thumbnail}
           alt={title}
@@ -30,37 +29,39 @@ const VideoCard = ({
       </div>
 
       {/* Text Section */}
-      <div className="p-4 flex flex-col justify-between flex-grow">
+      <div className="p-3 flex flex-col justify-between flex-grow">
         <div>
           {/* Title */}
-          <h2 className="text-lg font-semibold text-gray-800 mb-1 hover:text-blue-600 transition-colors line-clamp-2">
+          <h2 className="text-base font-semibold text-gray-800 mb-1 hover:text-blue-600 transition-colors line-clamp-2">
             {title}
           </h2>
 
           {/* Description with 'More' toggle */}
           <div>
             <p
-              className={`text-gray-600 text-sm leading-relaxed ${expanded ? "" : "line-clamp-1"
-                }`}
+              className={`text-gray-600 text-sm leading-relaxed ${
+                expanded ? "" : "line-clamp-1"
+              }`}
             >
               {description}
             </p>
             <button
               onClick={() => setExpanded(!expanded)}
-              className="text-blue-600 text-sm mt-1 hover:underline focus:outline-none"
+              className="text-blue-600 text-xs mt-1 hover:underline focus:outline-none"
             >
               {expanded ? "Show Less" : "More"}
             </button>
           </div>
-
         </div>
+
         {/* Tags */}
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-2 flex flex-wrap gap-1.5">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`text-xs font-medium px-3 py-1 rounded-full cursor-pointer hover:scale-105 hover:shadow-sm transition-all duration-300 ${colors[index % colors.length]
-                }`}
+              className={`text-[11px] font-medium px-2.5 py-1 rounded-full cursor-pointer hover:scale-105 hover:shadow-sm transition-all duration-300 ${
+                colors[index % colors.length]
+              }`}
             >
               #{tag}
             </span>
@@ -70,5 +71,6 @@ const VideoCard = ({
     </div>
   );
 };
+
 
 export default VideoCard;

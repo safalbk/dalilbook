@@ -1,54 +1,61 @@
 import React from 'react'
 import Tags from '/src/components/Tags/Tags.jsx';
 
-const TopicsCard = () => {
+const TopicsCard = ({
+  title = "Default Title",
+  description = "This is a short default description for the topic card.",
+  stats = {
+    notes: 0,
+    videos: 0,
+    photos: 0,
+    ebooks: 0,
+    files: 0,
+  },
+}) => {
   return (
-    <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
-
-
-      <div class="flex flex-col  h-full justify-between">
-
+    <div className="w-full sm:w-[600px] h-[220px] lg:h-[180px] bg-white rounded-md p-3 my-2 shadow hover:shadow-md transition-all duration-300">
+      <div className="flex flex-col h-full justify-between">
+        {/* Title & Description */}
         <div>
-          <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+          <h1 className="text-gray-800 text-md font-semibold">
+            Title: {title}
+          </h1>
 
-          <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
-
+          <p className="line-clamp-4 lg:line-clamp-3 text-gray-700 text-sm my-2">
+            {description}
+          </p>
         </div>
 
-        <div className='flex gap-2 flex-wrap  '>
-          <div className='flex items-center gap-2'>
+        {/* Tags Section */}
+        <div className="flex gap-3 flex-wrap text-sm">
+          <div className="flex items-center gap-2">
             <span className="font-medium text-gray-700">Notes</span>
-            <Tags tags={['4']} />
+            <Tags tags={[stats.notes.toString()]} />
           </div>
 
-          <div className='flex items-center gap-2'>
+          <div className="flex items-center gap-2">
             <span className="font-medium text-gray-700">Videos</span>
-            <Tags tags={['4']} />
+            <Tags tags={[stats.videos.toString()]} />
           </div>
 
-          <div className='flex items-center gap-2'>
+          <div className="flex items-center gap-2">
             <span className="font-medium text-gray-700">Photos</span>
-            <Tags tags={['4']} />
+            <Tags tags={[stats.photos.toString()]} />
           </div>
 
-          <div className='flex items-center gap-2'>
-            <span className="font-medium text-gray-700">E-Book</span>
-            <Tags tags={['4']} />
+          <div className="flex items-center gap-2">
+            <span className="font-medium text-gray-700">E-Books</span>
+            <Tags tags={[stats.ebooks.toString()]} />
           </div>
 
-          <div className='flex items-center gap-2'>
+          <div className="flex items-center gap-2">
             <span className="font-medium text-gray-700">Files</span>
-            <Tags tags={['4']} />
+            <Tags tags={[stats.files.toString()]} />
           </div>
-
-
         </div>
       </div>
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default TopicsCard
+export default TopicsCard;
