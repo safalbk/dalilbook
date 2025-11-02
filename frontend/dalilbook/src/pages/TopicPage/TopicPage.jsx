@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeartPlus } from "lucide-react";
-import VideoCard from '../../components/VideoCard/VideoCard.jsx';
+import VideoCard from '/src/components/cards/VideoCard/VideoCard.jsx';
 import ImageCard from '../../components/cards/ImageCard/ImageCard.jsx';
 
 function Tags({ tags }) {

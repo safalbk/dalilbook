@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cardImage from "../../assets/images/CardImage.jpg";
+import cardImage from "/src/assets/images/CardImage.jpg";
 
 const VideoCard = ({
   title = "Video Title",
