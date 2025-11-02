@@ -1,29 +1,35 @@
 import React from "react";
 import Tags from '/src/components/Tags/Tags.jsx';
 
-const NotesCard = () => {
-
-
+const NotesCard = ({
+  title = "Default Title",
+  summary = "This is a short summary line for the note.",
+  content = "This is the full note content. You can replace this with actual text or fetched data.",
+  tags = ["General"],
+}) => {
   return (
-    <div className=' w-full sm:w-full h-70 lg:h-70 bg-white rounded-md p-2 my-2 align-center' >
-
-      <div class="flex flex-col  h-full justify-between">
-
+    <div className="w-full sm:w-full h-[280px] lg:h-[280px] bg-white rounded-md p-4 my-3 shadow hover:shadow-md transition-all duration-300">
+      <div className="flex flex-col h-full justify-between">
+        {/* Title & Description */}
         <div>
-          <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+          <h1 className="text-gray-800 text-md font-semibold mb-2">
+            Title: {title}
+          </h1>
 
-          <p className='line-clamp-1 lg:line-clamp-1 text-gray-800 text-md mt-2 mb-4'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
-          <p className='line-clamp-6 lg:line-clamp-6 text-gray-800 text-md'>Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
-            Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
-            and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
-            then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
-            Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.</p>
+          {/* Short one-line summary */}
+          <p className="line-clamp-1 text-gray-700 text-sm mb-3">
+            {summary}
+          </p>
 
+          {/* Main content / excerpt */}
+          <p className="line-clamp-6 text-gray-700 text-sm leading-relaxed">
+            {content}
+          </p>
         </div>
 
-        <div>
-
-          <Tags tags={['quran ', 'kill', 'marriage']} />
+        {/* Tags Section */}
+        <div className="mt-3">
+          <Tags tags={tags} />
         </div>
       </div>
     </div>
