@@ -1,12 +1,12 @@
 import React from "react";
 // import VideoCard from '../components/VideoCard/VideoCard';
-import VideoCard from "/src/components/VideoCard/VideoCard.jsx";
+import VideoCard from "/src/components/cards/VideoCard/VideoCard.jsx";
 import VideoList from "../components/VideoList/VideoList";
-import DescriptionCard from "../components/DescriptionCard/DescriptionCard";
-import FileUpload from "../components/FileUploadCard/FileUpload";
-import ImageCard from "../components/ImageCard/ImageCard";
-import NotesCard from "../components/NotesCard/NotesCard";
-import TextCard from "../components/TextCard/TextCard";
+import DescriptionCard from "../components/cards/DescriptionCard/DescriptionCard";
+import FileUpload from "../components/cards/FileUploadCard/FileUpload";
+import ImageCard from "../components/cards/ImageCard/ImageCard";
+import NotesCard from "../components/cards/NotesCard/NotesCard";
+import TextCard from "../components/cards/TextCard/TextCard";
 
 function Topic() {
   return (

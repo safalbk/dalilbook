@@ -1,9 +1,12 @@
 import React from 'react'
 import { HeartPlus } from "lucide-react";
-import VideoCard from '../components/VideoCard/VideoCard.jsx';
+import VideoCard from '../components/cards/VideoCard/VideoCard.jsx';
 import SearchInput from '../components/SearchInput/SearchInput';
 import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
-import ImageCard from '../components/ImageCard/ImageCard';
+import ImageCard from '../components/cards/ImageCard/ImageCard.jsx';
+import { useNavigate } from "react-router-dom";
+import SideBar from '../components/SideBar/SideBar.jsx';
+
 
 
 function Topics({ count }) {
@@ -78,6 +81,11 @@ function Tags({ tags }) {
 
 
 function Home() {
+  const navigate = useNavigate();
+  const navTopic = () => {
+    navigate("/topicpage");
+  };
+
   return (
     < >
       <div className='mt-20'></div>
@@ -86,22 +94,7 @@ function Home() {
       <div class="grid grid-cols-1 sm:grid-cols-8  md:grid-cols-8  gap-4 p-4">
 
         {/* side bar section */}
-        <div class=" col-span-1 hidden md:block sm:col-span-3  md:col-span-1 bg-gray-100 p-1 min-h-screen ">
-
-          <div className="px-2 flex items-center">
-            <h1 className="font-inter text-lg font-normal text-gray-800">
-              Favorite Topics
-            </h1>
-            <span className="ml-3">
-              <HeartPlus />
-            </span>
-          </div>
-
-          <div class="border-t-1 border-gray-300 w-full my-4"></div>
-
-          <Topics count={5} />
-
-        </div>
+        <SideBar/>
 
         {/* main content section */}
         <div class="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
@@ -138,7 +131,7 @@ function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-2  '>
 
             {/* topic card */}
-            <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
+            <div onClick={navTopic} className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
 
 
               <div class="flex flex-col  h-full justify-between">
@@ -272,24 +265,41 @@ function Home() {
             <span className="font-medium text-gray-700">Videos</span>
             <Tags tags={['12']} />
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-2  mt-4  '>
-            <div className=' w-full sm:w-150 bg-white rounded-md  my-3' >
-              <VideoCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
+          <div className='grid grid-cols-1 md:grid-cols-3 3xl:bg-red-100 md:gap-10  mt-4  '>
+            <div className="flex  my-3">
+              <div className="bg-white rounded-md">
+                <VideoCard
+                  title="Learn React in 10 Minutes"
+                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                />
+              </div>
             </div>
+            <div className="flex  my-3">
+              <div className="bg-white rounded-md">
+                <VideoCard
+                  title="Learn React in 10 Minutes"
+                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                />
+              </div>
+            </div>
+            <div className="flex  my-3">
+              <div className="bg-white rounded-md">
+                <VideoCard
+                  title="Learn React in 10 Minutes"
+                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                />
+              </div>
+            </div>
+            
 
-            <div className=' w-full sm:w-150 bg-white rounded-md  my-3' >
-              <VideoCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
-            </div>
+
+
 
           </div>
           {/* topic  section */}
@@ -306,7 +316,7 @@ function Home() {
                 thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
               />
             </div>
-             <div className=' w-full sm:w-100 bg-white rounded-md  my-3' >
+            <div className=' w-full sm:w-100 bg-white rounded-md  my-3' >
               <ImageCard
                 title="Learn React in 10 Minutes"
                 description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
@@ -314,7 +324,7 @@ function Home() {
                 thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
               />
             </div>
-             <div className=' w-full sm:w-100 bg-white rounded-md  my-3' >
+            <div className=' w-full sm:w-100 bg-white rounded-md  my-3' >
               <ImageCard
                 title="Learn React in 10 Minutes"
                 description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
