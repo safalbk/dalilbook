@@ -15,7 +15,7 @@ const ImageCard = ({
   ];
 
   return (
-    <div className="w-full max-w-sm mx-auto bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 p-5 flex flex-col items-center">
+    <div className="w-full  mx-auto bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 p-5 flex flex-col items-center">
       {/* Image */}
       <div className="w-full overflow-hidden rounded-xl mb-4">
         <img
