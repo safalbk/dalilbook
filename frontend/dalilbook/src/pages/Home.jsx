@@ -6,6 +6,9 @@ import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 import ImageCard from '../components/cards/ImageCard/ImageCard.jsx';
 import { useNavigate } from "react-router-dom";
 import SideBar from '../components/SideBar/SideBar.jsx';
+import Tags from '/src/components/Tags/Tags.jsx';
+import TopicsCard from '../components/cards/TopicsCard/TopicsCard.jsx';
+import NotesCard from '../components/cards/NotesCard/NotesCard.jsx';
 
 
 
@@ -24,60 +27,14 @@ function Topics({ count }) {
   );
 }
 
-function TypeButton({ text }) {
+function FilterButton({ text }) {
   return (
     <div className="inline-block bg-white text-gray-700 font-medium px-4 py-1.5 rounded-full shadow-sm hover:shadow-md transition-shadow duration-200 mx-1 my-1">
       {text}
     </div>
   );
 }
-function Tags({ tags }) {
-  const colors = [
-    "bg-pink-100 text-pink-700",
-    "bg-green-100 text-green-700",
-    "bg-blue-100 text-blue-700",
-    "bg-yellow-100 text-yellow-700",
-    "bg-purple-100 text-purple-700",
-    "bg-orange-100 text-orange-700",
-    "bg-red-100 text-red-700",
-    "bg-teal-100 text-teal-700",
-    "bg-cyan-100 text-cyan-700",
-    "bg-lime-100 text-lime-700",
-    "bg-emerald-100 text-emerald-700",
-    "bg-sky-100 text-sky-700",
-    "bg-indigo-100 text-indigo-700",
-    "bg-violet-100 text-violet-700",
-    "bg-fuchsia-100 text-fuchsia-700",
-    "bg-rose-100 text-rose-700",
-    "bg-amber-100 text-amber-700",
-    "bg-stone-100 text-stone-700",
-    "bg-neutral-100 text-neutral-700",
-    "bg-gray-100 text-gray-700",
-    "bg-slate-100 text-slate-700",
-    "bg-zinc-100 text-zinc-700",
-    "bg-blue-200 text-blue-800",
-    "bg-green-200 text-green-800",
-    "bg-orange-200 text-orange-800",
-    "bg-purple-200 text-purple-800",
-  ];
 
-  const getRandomColor = () =>
-    colors[Math.floor(Math.random() * colors.length)];
-
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      {tags.map((tag, index) => (
-        <span
-          key={index}
-          className={`text-xs md:text-sm font-medium px-3 py-1 rounded-full cursor-pointer hover:scale-105 hover:shadow-sm transition-all duration-300 ${getRandomColor()
-            }`}
-        >
-          {tag}
-        </span>
-      ))}
-    </div>
-  );
-}
 
 
 function Home() {
@@ -94,7 +51,7 @@ function Home() {
       <div class="grid grid-cols-1 sm:grid-cols-8  md:grid-cols-8  gap-4 p-4">
 
         {/* side bar section */}
-        <SideBar/>
+        <SideBar />
 
         {/* main content section */}
         <div class="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
@@ -112,11 +69,11 @@ function Home() {
           {/*Type button group  */}
           <div className='w-full h-20 md:h-12 my-3 '>
 
-            <TypeButton text="All" />
-            <TypeButton text="Topics" />
-            <TypeButton text="Videos" />
-            <TypeButton text="Notes" />
-            <TypeButton text="E-Books" />
+            <FilterButton text="All" />
+            <FilterButton text="Topics" />
+            <FilterButton text="Videos" />
+            <FilterButton text="Notes" />
+            <FilterButton text="E-Books" />
 
           </div>
 
@@ -131,96 +88,8 @@ function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-2  '>
 
             {/* topic card */}
-            <div onClick={navTopic} className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
-
-
-              <div class="flex flex-col  h-full justify-between">
-
-                <div>
-                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
-
-                  <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
-
-                </div>
-
-                <div className='flex gap-2 flex-wrap  '>
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Notes</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Videos</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Photos</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">E-Book</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Files</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-
-                </div>
-              </div>
-
-
-
-            </div>
-            <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
-
-
-              <div class="flex flex-col  h-full justify-between">
-
-                <div>
-                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
-
-                  <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
-
-                </div>
-
-                <div className='flex gap-2 flex-wrap  '>
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Notes</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Videos</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Photos</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">E-Book</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-                  <div className='flex items-center gap-2'>
-                    <span className="font-medium text-gray-700">Files</span>
-                    <Tags tags={['4']} />
-                  </div>
-
-
-                </div>
-              </div>
-
-
-
-            </div>
+            <TopicsCard />
+            <TopicsCard />
 
           </div>
 
@@ -234,28 +103,7 @@ function Home() {
           <div className='grid grid-cols-1 '>
 
             {/* notes card */}
-            <div className=' w-full sm:w-full h-70 lg:h-70 bg-white rounded-md p-2 my-2 align-center' >
-
-              <div class="flex flex-col  h-full justify-between">
-
-                <div>
-                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
-
-                  <p className='line-clamp-1 lg:line-clamp-1 text-gray-800 text-md mt-2 mb-4'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
-                  <p className='line-clamp-6 lg:line-clamp-6 text-gray-800 text-md'>Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
-                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
-                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
-                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
-                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.</p>
-
-                </div>
-
-                <div>
-
-                  <Tags tags={['quran ', 'kill', 'marriage']} />
-                </div>
-              </div>
-            </div>
+            <NotesCard />
 
 
           </div>
@@ -266,40 +114,25 @@ function Home() {
             <Tags tags={['12']} />
           </div>
           <div className='grid grid-cols-1 md:grid-cols-3 3xl:bg-red-100 md:gap-10  mt-4  '>
-            <div className="flex  my-3">
-              <div className="bg-white rounded-md">
-                <VideoCard
-                  title="Learn React in 10 Minutes"
-                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-                />
-              </div>
-            </div>
-            <div className="flex  my-3">
-              <div className="bg-white rounded-md">
-                <VideoCard
-                  title="Learn React in 10 Minutes"
-                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-                />
-              </div>
-            </div>
-            <div className="flex  my-3">
-              <div className="bg-white rounded-md">
-                <VideoCard
-                  title="Learn React in 10 Minutes"
-                  description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                  tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                  thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-                />
-              </div>
-            </div>
-            
+            <VideoCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
 
-
-
+            <VideoCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
+            <VideoCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
 
           </div>
           {/* topic  section */}
