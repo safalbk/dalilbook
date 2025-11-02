@@ -34,7 +34,6 @@ function filterPhotos(data=photosData, query) {
   );
 }
 
-console.log(filterNotes("Sunset"));
 
 
     

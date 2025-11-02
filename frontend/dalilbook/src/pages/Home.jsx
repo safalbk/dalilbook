@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from "react";
 import { HeartPlus } from "lucide-react";
 import VideoCard from '../components/cards/VideoCard/VideoCard.jsx';
 import SearchInput from '../components/SearchInput/SearchInput';
-import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 import ImageCard from '../components/cards/ImageCard/ImageCard.jsx';
 import { useNavigate } from "react-router-dom";
 import SideBar from '../components/SideBar/SideBar.jsx';
@@ -10,25 +9,39 @@ import Tags from '/src/components/Tags/Tags.jsx';
 import TopicsCard from '../components/cards/TopicsCard/TopicsCard.jsx';
 import NotesCard from '../components/cards/NotesCard/NotesCard.jsx';
 import FilterButton from '../components/FilterButton/FilterButton.jsx';
+import { filterNotes } from '../services/filterData.js';
+import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 
 function Home() {
+  // console.log("haii");
+  // console.log(notesData.data);
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  console.log(filterNotes(notesData.data, "ocean"));
+
   const navigate = useNavigate();
   const navTopic = () => {
     navigate("/topicpage");
   };
+
+  const inputChanged = (e) => {
+    console.log(e.target.value);
+    setSearchTerm(e.target.value);
+  }
 
   return (
     < >
       <div className='mt-20'></div>
 
       {/* main grid */}
-      <div class="grid grid-cols-1 sm:grid-cols-8  md:grid-cols-8  gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-8  md:grid-cols-8  gap-4 p-4">
 
         {/* side bar section */}
         <SideBar />
 
         {/* main content section */}
-        <div class="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
+        <div className="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
 
           {/* Dashboard row  */}
           <div className='w-full h-10  flex items-center justify-center'>
@@ -37,7 +50,7 @@ function Home() {
 
           {/* search row */}
           <div className='w-full h-10  '>
-            <SearchInput />
+            <SearchInput onChange={inputChanged} />
           </div>
 
           {/*Type button group  */}
@@ -62,22 +75,18 @@ function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-2  '>
 
             {/* topic card */}
-            <div onClick={navTopic}>
-              <TopicsCard
-                title="Aisha's Marriage"
-                description="The Prophet (ﷺ) married Aisha when she was six years old and consummated the marriage when she was nine. She remained with him for nine years until his death."
-                stats={{
-                  notes: 4,
-                  videos: 2,
-                  photos: 5,
-                  ebooks: 1,
-                  files: 3,
-                }}
-              />
-            </div>
+            {filterNotes(notesData.data, searchTerm).map((topic, index) => (
+              <div key={index} onClick={navTopic} className="cursor-pointer">
+                <TopicsCard
+                  title={topic.title}
+                  description={topic.description}
+                  stats={topic.stats}
+                />
+              </div>
+            ))}
 
 
-            <TopicsCard
+            {/* <TopicsCard
               title="Aisha's Marriage"
               description="The Prophet (ﷺ) married Aisha when she was six years old and consummated the marriage when she was nine. She remained with him for nine years until his death."
               stats={{
@@ -87,7 +96,7 @@ function Home() {
                 ebooks: 1,
                 files: 3,
               }}
-            />
+            /> */}
 
 
           </div>
@@ -149,30 +158,30 @@ function Home() {
 
           {/* Images container */}
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4  mt-4  '>
-           <ImageCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
-              <ImageCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
-              <ImageCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
-              <ImageCard
-                title="Learn React in 10 Minutes"
-                description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-              />
+            <ImageCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
+            <ImageCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
+            <ImageCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
+            <ImageCard
+              title="Learn React in 10 Minutes"
+              description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
+              tags={["React", "Frontend", "JavaScript", "Tutorial"]}
+              thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+            />
           </div>
 
           {/* end main content   */}

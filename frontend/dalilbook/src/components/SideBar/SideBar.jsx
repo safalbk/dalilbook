@@ -17,7 +17,7 @@ function Topics({ count }) {
 }
 function SideBar() {
   return (
-    <div class=" col-span-1 hidden md:block sm:col-span-3  md:col-span-1 bg-gray-100 p-1 min-h-screen ">
+    <div className=" col-span-1 hidden md:block sm:col-span-3  md:col-span-1 bg-gray-100 p-1 min-h-screen ">
 
       <div className="px-2 flex items-center">
         <h1 className="font-inter text-lg font-normal text-gray-800">
@@ -28,7 +28,7 @@ function SideBar() {
         </span>
       </div>
 
-      <div class="border-t-1 border-gray-300 w-full my-4"></div>
+      <div className="border-t-1 border-gray-300 w-full my-4"></div>
 
       <Topics count={5} />
 

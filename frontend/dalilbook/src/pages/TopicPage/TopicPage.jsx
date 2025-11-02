@@ -64,7 +64,7 @@ function TopicPage() {
 
                 <div className=' w-full sm:w-full h-60 lg:h-35 bg-white rounded-md p-2 my-2 align-center' >
 
-                    <div class="flex flex-col  h-full justify-between">
+                    <div className="flex flex-col  h-full justify-between">
 
                         <div>
 
