@@ -85,7 +85,7 @@ function Home() {
       <div class="grid grid-cols-1 sm:grid-cols-8  md:grid-cols-8  gap-4 p-4">
 
         {/* side bar section */}
-        <div class=" col-span-1 sm:col-span-3  md:col-span-1  bg-gray-100 p-1 min-h-screen ">
+        <div class=" col-span-1 sm:col-span-3  md:col-span-1 bg-gray-100 p-1 min-h-screen ">
 
           <div className="px-2 flex items-center">
             <h1 className="font-inter text-lg font-normal text-gray-800">
@@ -133,53 +133,248 @@ function Home() {
           </div>
 
 
+          {/* topic container */}
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-2  '>
+
+            {/* topic card */}
+            <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 align-center' >
 
 
-          <div className=' w-full sm:w-160 h-55 lg:h-40 bg-white rounded-md p-2' >
+              <div class="flex flex-col  h-full justify-between">
 
-            <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
-            <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
 
-            <div className='flex gap-2 flex-wrap'>
-              <div className='flex items-center gap-2'>
-                <span className="font-medium text-gray-700">Notes</span>
-                <Tags tags={['4']} />
+                  <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+
+                </div>
+
+                <div className='flex gap-2 flex-wrap  '>
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Notes</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Videos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Photos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">E-Book</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Files</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+
+                </div>
               </div>
 
-              <div className='flex items-center gap-2'>
-                <span className="font-medium text-gray-700">Videos</span>
-                <Tags tags={['4']} />
-              </div>
-
-              <div className='flex items-center gap-2'>
-                <span className="font-medium text-gray-700">Photos</span>
-                <Tags tags={['4']} />
-              </div>
-
-              <div className='flex items-center gap-2'>
-                <span className="font-medium text-gray-700">E-Book</span>
-                <Tags tags={['4']} />
-              </div>
-
-              <div className='flex items-center gap-2'>
-                <span className="font-medium text-gray-700">Files</span>
-                <Tags tags={['4']} />
-              </div>
 
 
             </div>
+            <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
 
 
+              <div class="flex flex-col  h-full justify-between">
+
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+
+                  <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+
+                </div>
+
+                <div className='flex gap-2 flex-wrap  '>
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Notes</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Videos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Photos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">E-Book</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Files</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+            </div>
+            <div className=' w-full sm:w-150 h-55 lg:h-43 bg-white rounded-md p-2 my-2 ' >
+
+
+              <div class="flex flex-col  h-full justify-between">
+
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+
+                  <p className='line-clamp-4 lg:line-clamp-3 text-gray-800 text-md my-2'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+
+                </div>
+
+                <div className='flex gap-2 flex-wrap  '>
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Notes</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Videos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Photos</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">E-Book</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+                  <div className='flex items-center gap-2'>
+                    <span className="font-medium text-gray-700">Files</span>
+                    <Tags tags={['4']} />
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+            </div>
           </div>
-          <div>
-            {/* <VideoCard
+
+          {/* Notes  section */}
+          <div className="w-full  flex items-center gap-2 mt-10">
+            <span className="font-medium text-gray-700">Notes</span>
+            <Tags tags={['2']} />
+          </div>
+
+          {/* notes container */}
+          <div className='grid grid-cols-1 '>
+
+            {/* notes card */}
+            <div className=' w-full sm:w-full h-70 lg:h-70 bg-white rounded-md p-2 my-2 align-center' >
+
+              <div class="flex flex-col  h-full justify-between">
+
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+
+                  <p className='line-clamp-1 lg:line-clamp-1 text-gray-800 text-md mt-2 mb-4'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+                  <p className='line-clamp-6 lg:line-clamp-6 text-gray-800 text-md'>Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
+                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
+                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
+                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
+                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.</p>
+
+                </div>
+
+                <div>
+
+                  <Tags tags={['quran ', 'kill', 'marriage']} />
+                </div>
+              </div>
+            </div>
+            <div className=' w-full sm:w-full h-70 lg:h-70 bg-white rounded-md p-2 my-2 align-center' >
+
+              <div class="flex flex-col  h-full justify-between">
+
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+
+                  <p className='line-clamp-1 lg:line-clamp-1 text-gray-800 text-md mt-2 mb-4'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+                  <p className='line-clamp-6 lg:line-clamp-6 text-gray-800 text-md'>Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
+                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
+                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
+                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
+                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.</p>
+
+                </div>
+
+                <div>
+
+                  <Tags tags={['quran ', 'kill', 'marriage']} />
+                </div>
+              </div>
+            </div>
+            <div className=' w-full sm:w-full h-70 lg:h-70 bg-white rounded-md p-2 my-2 align-center' >
+
+              <div class="flex flex-col  h-full justify-between">
+
+                <div>
+                  <h1 className='text-gray-800 text-md font-medium'>Title :ayisha marriage</h1>
+
+                  <p className='line-clamp-1 lg:line-clamp-1 text-gray-800 text-md mt-2 mb-4'>that the Prophet (ﷺ) married her when she was six years old and he consummated his marriage when she was nine years old. Hisham said: I have been informed that `Aisha remained with the Prophet (ﷺ) for nine years (i.e. till his death).</p>
+                  <p className='line-clamp-6 lg:line-clamp-6 text-gray-800 text-md'>Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
+                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
+                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
+                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
+                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.
+                    Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
+                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
+                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
+                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
+                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.
+                    Permitted to you, on the night of the fasts, is the approach to your wives. They are your garments and ye are their garments.
+                    Allah knoweth what ye used to do secretly among yourselves; but He turned to you and forgave you; so now associate with them,
+                    and seek what Allah Hath ordained for you, and eat and drink, until the white thread of dawn appear to you distinct from its black thread;
+                    then complete your fast Till the night appears; but do not associate with your wives while ye are in retreat in the mosques.
+                    Those are Limits (set by) Allah: Approach not nigh thereto. Thus doth Allah make clear His Signs to men: that they may learn self-restraint.
+                    </p>
+
+                </div>
+
+                <div>
+
+                  <Tags tags={['quran ', 'kill', 'marriage']} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          {/* <div>
+            <VideoCard
               title="Learn React in 10 Minutes"
               description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
               tags={["React", "Frontend", "JavaScript", "Tutorial"]}
               thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-            /> */}
+            />
 
-          </div>
+          </div> */}
 
 
         </div>
