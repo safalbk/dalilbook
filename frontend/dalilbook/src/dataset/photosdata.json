@@ -3,23 +3,37 @@
         {
             "id": 1,
             "title": "Sunset Over the Mountains",
-            "url": "https://example.com/photos/sunset.jpg",
+            "url":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg",
             "description": "A beautiful sunset over the mountains with vibrant colors.",
             "tags": ["sunset", "mountains", "nature"]
         },
         {
             "id": 2,
             "title": "City Skyline at Night",
-            "url": "https://example.com/photos/city_skyline.jpg",
+            "url":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg",
             "description": "The city skyline illuminated at night with sparkling lights.",
             "tags": ["city", "night", "skyline"]
         },
         {
             "id": 3,
             "title": "Forest Trail in Autumn",
-            "url": "https://example.com/photos/forest_trail.jpg",
+            "url":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg",
             "description": "A serene forest trail covered in autumn leaves.",
             "tags": ["forest", "autumn", "trail"]
+        },
+        {
+            "id": 4,
+            "title": "Ocean Waves",
+            "url":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg",
+            "description": "Powerful ocean waves crashing against the shore.",
+            "tags": ["ocean", "waves", "beach"]
+        },
+        {
+            "id": 5,
+            "title": "Desert Dunes",
+            "url":  "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg",
+            "description": "Rolling desert dunes under a clear blue sky.",
+            "tags": ["desert", "dunes", "sand"]
         }
     ]
 }

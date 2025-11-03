@@ -1,13 +1,20 @@
 import { useState } from 'react'
 
 import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,Navigate  } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from './components/NavBar/Navbar';
 import Topic from './pages/Topic';
 import Videos from './pages/Videos';
 import TopicPage from './pages/TopicPage/TopicPage';
+import AllListPage from './pages/HomePages/AllListPage';
+import TopicsListPage from './pages/HomePages/TopicsListPage';
+import VideoListPage from './pages/HomePages/VideosListPage'; 
+import ImagesListPage from './pages/HomePages/ImagesListPage'; 
+import NotesListPage from './pages/HomePages/NotesListPage'; 
+
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,7 +23,17 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+          <Route path="/" element={<Home />}>
+            <Route path="dashboard" element={<AllListPage />} />
+            <Route path="alltopics" element={<TopicsListPage />} />
+             <Route path="allvideos" element={<VideoListPage />} />
+              <Route path="allnotes" element={<NotesListPage />} />
+               <Route path="allimages" element={<ImagesListPage />} />
+
+          </Route>
+
           {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/topics" element={<Topic />} />
           <Route path="/videos" element={<Videos />} />
