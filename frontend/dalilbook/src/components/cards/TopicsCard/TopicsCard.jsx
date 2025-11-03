@@ -13,7 +13,7 @@ const TopicsCard = ({
   },
 }) => {
   return (
-    <div className="w-full sm:w-[600px] h-[220px] lg:h-[180px] bg-white rounded-md p-3 my-2 shadow hover:shadow-md transition-all duration-300">
+    <div className="w-full sm:w-[410px] h-[220px] lg:h-[190px] bg-white rounded-md p-3 my-2 shadow hover:shadow-md transition-all duration-300">
       <div className="flex flex-col h-full justify-between">
         {/* Title & Description */}
         <div>

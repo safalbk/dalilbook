@@ -9,7 +9,7 @@
                 "JavaScript",
                 "Frontend"
             ],
-            "thumbnail": "https://example.com/thumbnails/react_intro.jpg"
+            "thumbnail": "data:image/jpeg;base64,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"
         },
         {
             "id": 2,
@@ -20,7 +20,40 @@
                 "JavaScript",
                 "Advanced"
             ],
-            "thumbnail": "https://example.com/thumbnails/react_advanced.jpg"
+            "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg"
+        },
+        {
+            "id": 3,
+            "title": "State Management with Redux",
+            "description": "Learn how to manage application state using Redux in your React applications.",
+            "tags": [
+                "React",
+                "Redux",
+                "State Management"
+            ],
+            "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg"
+        },
+        {
+            "id": 4,
+            "title": "React Router Basics",
+            "description": "Understand the fundamentals of routing in React applications using React Router.",
+            "tags": [
+                "React",
+                "Routing",
+                "React Router"
+            ],
+            "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Building Forms in React",
+            "description": "Learn how to create and manage forms in React applications.",
+            "tags": [
+                "React",
+                "Forms",
+                "Frontend"
+            ],
+            "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/81/Assim_al_Hakeem_2024.jpg"
         }
     ]
 }
