@@ -13,6 +13,7 @@ import TopicsListPage from './pages/HomePages/TopicsListPage';
 import VideoListPage from './pages/HomePages/VideosListPage'; 
 import ImagesListPage from './pages/HomePages/ImagesListPage'; 
 import NotesListPage from './pages/HomePages/NotesListPage'; 
+import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/topics" element={<Topic />} />
           <Route path="/videos" element={<Videos />} />
           <Route path="/topicpage" element={<TopicPage />} />
+<Route path="/videopage/:id" element={<VideoPlayerPage />} />
 
         </Routes>
       </BrowserRouter>

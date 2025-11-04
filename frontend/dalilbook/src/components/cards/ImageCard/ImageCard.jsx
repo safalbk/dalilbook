@@ -4,6 +4,8 @@ const ImageCard = ({
   title = "Beautiful Sunset",
   image = cardImage1,
   tags = ["Photography", "Nature", "Inspiration"],
+    onImageClick,
+
 }) => {
   const colors = [
     "bg-pink-100 text-pink-700",
@@ -17,7 +19,7 @@ const ImageCard = ({
   return (
     <div className="w-full sm:w-[280px] md:w-[300px] lg:w-[320px] bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100">
       {/* Image with hover overlay */}
-      <div className="relative w-full h-[180px] overflow-hidden group">
+      <div onClick={onImageClick}  className="relative w-full h-[180px] overflow-hidden group">
         <img
           src={image}
           alt={title}
