@@ -5,6 +5,8 @@ const VideoCard = ({
   description = "This is a short description for the video. Click 'More' to expand and see the full text if available.",
   thumbnail = cardImage,
   tags = ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
+  onImageClick,
+
 }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -16,15 +18,15 @@ const VideoCard = ({
     "bg-purple-100 text-purple-700",
     "bg-orange-100 text-orange-700",
   ];
-
   return (
     <div className="w-full sm:w-[280px] md:w-[300px] lg:w-[320px] bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
       {/* Thumbnail */}
-      <div className="relative w-full h-[140px] overflow-hidden">
-        <img
+      <div  onClick={onImageClick} className="relative w-full h-[140px] overflow-hidden">
+        <video
           src={thumbnail}
           alt={title}
           className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+         
         />
       </div>
 
@@ -39,9 +41,8 @@ const VideoCard = ({
           {/* Description with 'More' toggle */}
           <div>
             <p
-              className={`text-gray-600 text-sm leading-relaxed ${
-                expanded ? "" : "line-clamp-1"
-              }`}
+              className={`text-gray-600 text-sm leading-relaxed ${expanded ? "" : "line-clamp-1"
+                }`}
             >
               {description}
             </p>
@@ -59,9 +60,8 @@ const VideoCard = ({
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`text-[11px] font-medium px-2.5 py-1 rounded-full cursor-pointer hover:scale-105 hover:shadow-sm transition-all duration-300 ${
-                colors[index % colors.length]
-              }`}
+              className={`text-[11px] font-medium px-2.5 py-1 rounded-full cursor-pointer hover:scale-105 hover:shadow-sm transition-all duration-300 ${colors[index % colors.length]
+                }`}
             >
               #{tag}
             </span>
