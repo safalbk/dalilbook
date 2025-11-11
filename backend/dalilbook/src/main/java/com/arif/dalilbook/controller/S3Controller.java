@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class S3Controller {
     @Autowired
@@ -27,4 +27,10 @@ public class S3Controller {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
                 .body(data);
     }
+    @PostMapping("/uploadimage")
+    public String uploadImage(@RequestParam("thumbnail") MultipartFile file) {
+        System.out.println("Received: " + file.getOriginalFilename());
+        return "Uploaded!";
+    }
+
 }
