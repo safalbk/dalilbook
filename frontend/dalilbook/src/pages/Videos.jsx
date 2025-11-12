@@ -1,5 +1,6 @@
 import React from 'react'
 import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
+import VideoUpload from '/src/components/VideoUpload/VideoUpload.jsx';
 const NotesList = ({ count }) => {
   // Take only the first `count` notes (if count is passed)
   const notesToShow = count ? notesData.data.slice(0, count) : notesData.data;
@@ -38,8 +39,9 @@ const NotesList = ({ count }) => {
 function Videos() {
   return (
     <div className='mt-20'>
-        <NotesList count={4} />
+        {/* <NotesList count={4} /> */}
 
+<VideoUpload />
     </div>
   )
 }

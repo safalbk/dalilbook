@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+
 import { Outlet } from 'react-router-dom';
 import { useOutletContext } from 'react-router-dom';
 
@@ -17,9 +19,10 @@ import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 import videodata from "/src/dataset/videodata.json"; // adjust path as needed
 import photosdata from "/src/dataset/photosdata.json"; // adjust path as needed
 
-
+import { getAllVideos } from '/src/services/videoService.js';
 function AllListPage() {
   const { searchTerm } = useOutletContext();
+  const [videos, setVideos] = useState([]);
 
   const navigate = useNavigate();
   const navTopic = () => {
@@ -29,6 +32,21 @@ function AllListPage() {
     console.log("video id: " + id);
     navigate("/videopage/" + id );
   };
+
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const data = await getAllVideos(); // 👈 calling your function here
+      if (data) {
+        console.log(data);
+        
+        setVideos(data);
+      }
+    };
+
+    fetchVideos();
+  }, []); 
+
 
   return (
     <div>
@@ -110,15 +128,17 @@ function AllListPage() {
       {/* Video container */}
       <div className='grid grid-cols-1 md:grid-cols-3 3xl:bg-red-100 gap-4 md:gap-10  mt-4  '>
 
-        {filterVideos(videodata.data, searchTerm).slice(0, 2).map((topic, index) => (
+        {filterVideos(videos, searchTerm).slice(0, 2).map((video, index) => (
           <div key={index} className="cursor-pointer">
             <VideoCard
-              title={topic.title}
-              description={topic.description}
-              tags={topic.tags}
-              thumbnail={topic.thumbnail}
-              onImageClick={() => navVideoPlayer(topic.id)}
+              title={video.title}
+              description={video.description}
+              tags={video.tags}
+              thumbnail={video.url}
+              onImageClick={() => navVideoPlayer(video.id)}
             />
+ 
+
           </div>
         ))}
 
@@ -144,7 +164,7 @@ function AllListPage() {
               title={topic.title}
               description={topic.description}
               tags={topic.tags}
-              thumbnail={topic.url}
+              image={topic.url}
               onImageClick={navTopic}
             />
           </div>

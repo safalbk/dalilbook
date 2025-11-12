@@ -12,6 +12,9 @@ import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
 import java.io.IOException;
+import java.time.Instant;
+import java.util.Objects;
+import java.util.UUID;
 
 @Service
 public class S3Service {
@@ -22,10 +25,10 @@ public class S3Service {
     @Value("${aws.bucket.name}")
     private String bucketName;
 
-    public void uploadFile(MultipartFile file) throws IOException{
+    public void uploadFile(MultipartFile file,String key) throws IOException{
         s3Client.putObject(PutObjectRequest.builder()
                         .bucket(bucketName)
-                        .key(file.getOriginalFilename())
+                        .key(key)
                         .build(),
                 RequestBody.fromBytes(file.getBytes())
                 );
@@ -41,6 +44,24 @@ public class S3Service {
         return objectAsBytes.asByteArray();
 
 
+    }
+
+    public String getFileUrl(String fileName){
+        return "https://" + bucketName + ".s3.amazonaws.com/" + fileName;
+
+
+    }
+    public String generateRandomFileName(String originalFileName) {
+        String extension = "";
+
+        // Extract extension (e.g. ".jpg", ".mp4")
+        int dotIndex = originalFileName.lastIndexOf('.');
+        if (dotIndex > 0) {
+            extension = originalFileName.substring(dotIndex);
+        }
+
+        // Generate new name
+        return UUID.randomUUID().toString() + extension;
     }
 
 
