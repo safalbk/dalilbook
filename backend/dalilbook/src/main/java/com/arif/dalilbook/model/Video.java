@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -25,8 +26,10 @@ public class Video {
     @NotNull
     private String description;
 
-    @NotNull
-    private String tags;
+    @ElementCollection
+    @CollectionTable(name = "video_tags", joinColumns = @JoinColumn(name = "video_id"))
+    @Column(name = "tag")
+    private List<String> tags;
 
     @PrePersist
 

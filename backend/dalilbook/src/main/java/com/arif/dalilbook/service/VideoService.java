@@ -9,6 +9,8 @@ import com.arif.dalilbook.repository.VideoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class VideoService {
@@ -30,5 +32,30 @@ public class VideoService {
 
         return VideoMapper.toDto(newVideo);
 
+    }
+
+    // 🔹 UPDATE video
+    public VideoResponseDto updateVideo(String id, VideoRequestDto videoRequestDto) {
+        Video existingVideo = videoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Video not found with id: " + id));
+
+        // update fields
+        existingVideo.setTitle(videoRequestDto.getTitle());
+        existingVideo.setDescription(videoRequestDto.getDescription());
+        existingVideo.setUrl(videoRequestDto.getUrl());
+        existingVideo.setTags(videoRequestDto.getTags());
+
+        Video updatedVideo = videoRepository.save(existingVideo);
+        return VideoMapper.toDto(updatedVideo);
+    }
+
+    // 🔹 DELETE video
+    public Map<String, String> deleteVideo(String id) {
+        if (!videoRepository.existsById(id)) {
+            throw new RuntimeException("Video not found with id: " + id);
+        }
+
+        videoRepository.deleteById(id);
+        return Map.of("status", "deleted");
     }
 }

@@ -139,31 +139,25 @@ function TopicPage() {
                             title="Learn React in 10 Minutes"
                             description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
                             tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                            thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                            image="https://dalilbookbucket.s3.ap-south-1.amazonaws.com/ironman.jpg"
                         />
-                         <ImageCard
+                        <ImageCard
                             title="Learn React in 10 Minutes"
                             description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
                             tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                            thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                            image="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
                         />
-                         <ImageCard
+                        <ImageCard
                             title="Learn React in 10 Minutes"
                             description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
                             tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                            thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                            image="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
                         />
-                         <ImageCard
+                        <ImageCard
                             title="Learn React in 10 Minutes"
                             description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
                             tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                            thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
-                        />
-                         <ImageCard
-                            title="Learn React in 10 Minutes"
-                            description="Master the basics of React.js with this quick tutorial — covering components, props, and hooks."
-                            tags={["React", "Frontend", "JavaScript", "Tutorial"]}
-                            thumbnail="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
+                            image="https://english.varthabharati.in/storage/uploads/karavali/kazi_vb_97.jpeg"
                         />
                 </div>
 

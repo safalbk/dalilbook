@@ -20,7 +20,7 @@ function ImagesListPage() {
             title={topic.title}
             description={topic.description}
             tags={topic.tags}
-            thumbnail={topic.url}
+            image={topic.url}
           />
         </div>
       ))}

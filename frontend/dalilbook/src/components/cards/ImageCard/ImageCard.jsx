@@ -2,7 +2,7 @@ import React from 'react'
 import cardImage1 from "/src/assets/images/CardImage.jpg";
 const ImageCard = ({
   title = "Beautiful Sunset",
-  image = cardImage1,
+  image = "https://dalilbookbucket.s3.ap-south-1.amazonaws.com/ironman.jpg",
   tags = ["Photography", "Nature", "Inspiration"],
     onImageClick,
 

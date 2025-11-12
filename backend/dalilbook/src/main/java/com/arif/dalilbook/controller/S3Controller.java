@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Objects;
+
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class S3Controller {
@@ -16,7 +18,10 @@ public class S3Controller {
 
     @PostMapping("/upload")
     public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file) throws IOException, IOException {
-        s3Service.uploadFile(file);
+        String randomFileName = s3Service.generateRandomFileName(Objects.requireNonNull(file.getOriginalFilename()));
+        String key = "uploads/" + randomFileName;
+
+        s3Service.uploadFile(file,key);
         return ResponseEntity.ok("File uploaded successfully!");
     }
 

@@ -3,7 +3,7 @@ import cardImage from "/src/assets/images/CardImage.jpg";
 const VideoCard = ({
   title = "Video Title",
   description = "This is a short description for the video. Click 'More' to expand and see the full text if available.",
-  thumbnail = cardImage,
+  thumbnail = "https://scienceandfilm.org/uploads/videos/files/Druid_Peak_%5bTrailer%5d_-_Florida_Film_Festival_2014.mp4",
   tags = ["Topic 1", "Topic 2", "Topic 3", "Topic 4"],
   onImageClick,
 
