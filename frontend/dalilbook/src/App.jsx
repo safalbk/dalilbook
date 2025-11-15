@@ -16,6 +16,7 @@ import NotesListPage from './pages/HomePages/NotesListPage';
 import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 import ThumGenerator from './components/ThubnailGenerator/ThumGenerator';
 import VideoFrameCapture from './components/ThubnailGenerator/VideoFrameCapture';
+import DirectS3Upload from './components/VideoUpload/DirectS3Upload';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,6 +44,9 @@ function App() {
 
           <Route path="/videopage/:id" element={<VideoPlayerPage />} />
           <Route path="/tum" element={<VideoFrameCapture />} />
+
+          <Route path="/s3upload" element={<DirectS3Upload />} />
+
 
 
         </Routes>

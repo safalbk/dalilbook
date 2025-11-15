@@ -20,11 +20,11 @@ import java.util.Objects;
 public class VideoController {
 
     private final S3Service s3Service;
-    private final  VideoService videoService;
+    private final VideoService videoService;
 
-    public VideoController(VideoService videoService,S3Service s3Service) {
+    public VideoController(VideoService videoService, S3Service s3Service) {
         this.videoService = videoService;
-        this.s3Service =s3Service;
+        this.s3Service = s3Service;
     }
 
     @GetMapping("all")
@@ -33,9 +33,15 @@ public class VideoController {
         return ResponseEntity.ok().body(videoService.getVideos());
 
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<VideoResponseDto> getVideosByID( @PathVariable String id) {
 
-    @PostMapping("/create")
-    public ResponseEntity<VideoResponseDto> createVideo(
+        return ResponseEntity.ok().body(videoService.getVideoById(id));
+
+    }
+
+    @PostMapping("/createvideofile")
+    public ResponseEntity<VideoResponseDto> createVideoWithFile(
             @Valid @RequestPart("data") VideoRequestDto videoRequestDto,
             @RequestPart("file") MultipartFile file) throws IOException {
 
@@ -47,5 +53,14 @@ public class VideoController {
 
         return ResponseEntity.ok(videoService.createVideo(videoRequestDto));
     }
+
+
+    @PostMapping("/create")
+    public ResponseEntity<VideoResponseDto> createVideo(
+            @Valid @RequestBody VideoRequestDto videoRequestDto) {
+
+        return ResponseEntity.ok(videoService.createVideo(videoRequestDto));
+    }
+
 
 }
