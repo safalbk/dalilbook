@@ -28,7 +28,7 @@ function AllListPage() {
   const navTopic = () => {
     navigate("/topicpage");
   };
-  const navVideoPlayer = (id) => {
+  const navVideoPlayer = (id,url) => {
     console.log("video id: " + id);
     navigate("/videopage/" + id );
   };
@@ -135,7 +135,7 @@ function AllListPage() {
               description={video.description}
               tags={video.tags}
               thumbnail={video.url}
-              onImageClick={() => navVideoPlayer(video.id)}
+              onImageClick={() => navVideoPlayer(video.id,video.url)}
             />
  
 

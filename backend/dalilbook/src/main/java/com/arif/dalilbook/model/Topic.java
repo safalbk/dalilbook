@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -21,8 +22,10 @@ public class Topic {
     @NotNull
     private String description;
 
-    @NotNull
-    private String tags;
+    @ElementCollection
+    @CollectionTable(name = "topic_tags", joinColumns = @JoinColumn(name = "topic_id"))
+    @Column(name = "tag")
+    private List<String> tags;
 
     @PrePersist
     public void generateId() {

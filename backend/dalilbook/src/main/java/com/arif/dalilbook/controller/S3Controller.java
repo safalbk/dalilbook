@@ -16,6 +16,12 @@ public class S3Controller {
     @Autowired
     private S3Service s3Service;
 
+    @GetMapping("/presign")
+    public ResponseEntity<String> getPresignedUrl(@RequestParam String filename) {
+        String url = s3Service.generatePresignedUrl(filename);
+        return ResponseEntity.ok(url);
+    }
+
     @PostMapping("/upload")
     public ResponseEntity<String> upload(@RequestParam("file") MultipartFile file) throws IOException, IOException {
         String randomFileName = s3Service.generateRandomFileName(Objects.requireNonNull(file.getOriginalFilename()));
@@ -37,5 +43,6 @@ public class S3Controller {
         System.out.println("Received: " + file.getOriginalFilename());
         return "Uploaded!";
     }
+
 
 }

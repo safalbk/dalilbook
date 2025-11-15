@@ -27,6 +27,14 @@ public class VideoService {
         return videos.stream().map(VideoMapper::toDto).toList();
     }
 
+    public VideoResponseDto getVideoById(String id){
+
+        Video existingVideo = videoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Video not found with id: " + id));
+        return VideoMapper.toDto(existingVideo);
+
+    }
+
     public VideoResponseDto createVideo(VideoRequestDto videoRequestDto){
         Video newVideo =videoRepository.save(VideoMapper.toModel(videoRequestDto));
 
