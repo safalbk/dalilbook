@@ -21,13 +21,16 @@ import photosdata from "/src/dataset/photosdata.json"; // adjust path as needed
 
 import { getAllVideos } from '/src/services/videoService.js';
 function AllListPage() {
+  
   const { searchTerm } = useOutletContext();
   const [videos, setVideos] = useState([]);
 
   const navigate = useNavigate();
+
   const navTopic = () => {
     navigate("/topicpage");
   };
+
   const navVideoPlayer = (id,url) => {
     console.log("video id: " + id);
     navigate("/videopage/" + id );
@@ -43,8 +46,8 @@ function AllListPage() {
         setVideos(data);
       }
     };
-
     fetchVideos();
+
   }, []); 
 
 
@@ -128,7 +131,7 @@ function AllListPage() {
       {/* Video container */}
       <div className='grid grid-cols-1 md:grid-cols-3 3xl:bg-red-100 gap-4 md:gap-10  mt-4  '>
 
-        {filterVideos(videos, searchTerm).slice(0, 2).map((video, index) => (
+        {filterVideos(videos, searchTerm).slice(0, 3).map((video, index) => (
           <div key={index} className="cursor-pointer">
             <VideoCard
               title={video.title}

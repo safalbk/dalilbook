@@ -5,6 +5,8 @@ import com.arif.dalilbook.dto.NoteRequestDto;
 import com.arif.dalilbook.dto.NoteResponseDto;
 import com.arif.dalilbook.service.NoteService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,18 +29,33 @@ public class NoteController {
     }
 
     @GetMapping
-    public ResponseEntity<List<NoteResponseDto>> getNotes(){
-        return ResponseEntity.ok().body(noteService.getNotes());
+    public ResponseEntity<List<NoteResponseDto>> getNotes(@RequestParam(required = false, defaultValue = "1") int pageNo,
+                                                          @RequestParam(required = false, defaultValue = "10") int pageSize,
+                                                          @RequestParam(required = false, defaultValue = "id") String sortBy,
+                                                          @RequestParam(required = false, defaultValue = "ASC") String sortDir,
+                                                          @RequestParam(required = false) String search){
+        Sort sort =null;
+        if(sortDir.equalsIgnoreCase("ASC") ){
+            sort =Sort.by(sortBy).ascending();
+        }else {
+            sort =Sort.by(sortBy).descending();
+        }
+        return ResponseEntity.ok().body(noteService.getNotes(PageRequest.of(pageNo-1,pageSize,sort),search));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<NoteResponseDto> getNoteById(  @PathVariable String id){
+        return ResponseEntity.ok().body(noteService.getNoteByID(id));
     }
 
     @PostMapping
-    public ResponseEntity<NoteResponseDto> createNotes(@Valid @RequestBody NoteRequestDto noteRequestDto){
+    public ResponseEntity<NoteResponseDto> createNotes( @RequestBody NoteRequestDto noteRequestDto){
         return ResponseEntity.ok().body(noteService.createNote(noteRequestDto));
 
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<NoteResponseDto> updateNote(@Valid @PathVariable String id, @RequestBody NoteRequestDto noteRequestDto){
+    public ResponseEntity<NoteResponseDto> updateNote(@PathVariable String id,@Valid  @RequestBody NoteRequestDto noteRequestDto){
         return ResponseEntity.ok().body(noteService.updateNote(id,noteRequestDto));
 
     }

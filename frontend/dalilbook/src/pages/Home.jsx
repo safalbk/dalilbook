@@ -73,7 +73,7 @@ function Home() {
         <div className="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
           {/* Dashboard row  */}
           <div className='w-full h-10  flex items-center justify-center'>
-            <h1 className='font-bold text-2xl text-gray-800 '>Dashboard</h1>
+            <h1 className='font-bold text-2xl text-gray-800 '>Dashboard </h1>
           </div>
 
           {/* search row */}
@@ -92,7 +92,7 @@ function Home() {
 
           </div>
           <Outlet context={{ searchTerm }} />
-
+         
 
           {/* end main content   */}
         </div>

@@ -4,10 +4,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
+@EntityListeners(org.springframework.data.jpa.domain.support.AuditingEntityListener.class)
+
 @Getter
 @Setter
 public class Note {
@@ -21,9 +27,14 @@ public class Note {
     @NotNull
     private String description;
 
-    @NotNull
-    private String tags;
+    @ElementCollection
+    @CollectionTable(name = "note_tags", joinColumns = @JoinColumn(name = "note_id"))
+    @Column(name = "tag")
+    private List<String> tags;
 
+
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     @NotNull
     private String text;
 
@@ -33,4 +44,14 @@ public class Note {
             this.id = UUID.randomUUID().toString();
         }
     }
+
+    @CreatedDate
+    @Column(nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Column(nullable = false)
+    private LocalDateTime updatedAt;
+
+
 }

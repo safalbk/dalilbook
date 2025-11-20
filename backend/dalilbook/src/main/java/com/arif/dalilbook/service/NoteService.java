@@ -9,6 +9,7 @@ import com.arif.dalilbook.mapper.VideoMapper;
 import com.arif.dalilbook.model.Note;
 import com.arif.dalilbook.model.Video;
 import com.arif.dalilbook.repository.NoteRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,10 +23,24 @@ public class NoteService {
         this.noteRepository = noteRepository;
 
     }
-    public List<NoteResponseDto> getNotes(){
+    public List<NoteResponseDto> getNotes(Pageable pageable, String search){
 
-        List<Note> notes = noteRepository.findAll();
-        return notes.stream().map(NoteMapper::toDto).toList();
+
+        if (search==null){
+            List<Note> notes = noteRepository.findAll(pageable).getContent();
+            return notes.stream().map(NoteMapper::toDto).toList();
+        }else
+        {
+            List<Note> notes = noteRepository.searchNotes(search,pageable).getContent();
+            return notes.stream().map(NoteMapper::toDto).toList();
+        }
+    }
+
+    public NoteResponseDto getNoteByID(String id){
+
+        Note existingNote = noteRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Note not found with id: " + id));
+        return NoteMapper.toDto(existingNote);
     }
 
     public NoteResponseDto createNote(NoteRequestDto noteRequestDto){
