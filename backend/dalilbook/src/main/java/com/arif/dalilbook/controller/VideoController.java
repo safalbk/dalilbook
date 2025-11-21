@@ -36,18 +36,19 @@ public class VideoController {
                                                             @RequestParam(required = false, defaultValue = "id") String sortBy,
                                                             @RequestParam(required = false, defaultValue = "ASC") String sortDir,
                                                             @RequestParam(required = false) String search
-                                                            ) {
-        Sort sort =null;
-        if(sortDir.equalsIgnoreCase("ASC") ){
-            sort =Sort.by(sortBy).ascending();
-        }else {
-            sort =Sort.by(sortBy).descending();
+    ) {
+        Sort sort = null;
+        if (sortDir.equalsIgnoreCase("ASC")) {
+            sort = Sort.by(sortBy).ascending();
+        } else {
+            sort = Sort.by(sortBy).descending();
         }
-        return ResponseEntity.ok().body(videoService.getVideos(PageRequest.of(pageNo-1,pageSize,sort),search));
+        return ResponseEntity.ok().body(videoService.getVideos(PageRequest.of(pageNo - 1, pageSize, sort), search));
 
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<VideoResponseDto> getVideosByID( @PathVariable String id) {
+    public ResponseEntity<VideoResponseDto> getVideosByID(@PathVariable String id) {
 
         return ResponseEntity.ok().body(videoService.getVideoById(id));
 
@@ -73,6 +74,23 @@ public class VideoController {
             @Valid @RequestBody VideoRequestDto videoRequestDto) {
 
         return ResponseEntity.ok(videoService.createVideo(videoRequestDto));
+    }
+
+    // 🟡 UPDATE video (PUT)
+    @PutMapping("/{id}")
+    public ResponseEntity<VideoResponseDto> updateVideo(
+            @PathVariable String id,
+            @Valid @RequestBody VideoRequestDto videoRequestDto
+    ) {
+        return ResponseEntity.ok(videoService.updateVideo(id, videoRequestDto));
+    }
+
+
+    // DELETE video
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteVideo(@PathVariable String id) {
+        videoService.deleteVideo(id);
+        return ResponseEntity.ok("Video deleted successfully");
     }
 
 

@@ -40,6 +40,9 @@ function NavBar() {
                     <NavLink to="/videos" className={linkClasses}>
                         Videos
                     </NavLink>
+                    <NavLink to="/images" className={linkClasses}>
+                        Images
+                    </NavLink>
                     <NavLink to="/e-books" className={linkClasses}>
                         E-books
                     </NavLink>

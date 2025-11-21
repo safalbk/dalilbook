@@ -27,17 +27,17 @@ function NotesListPage() {
   };
 
   useEffect(() => {
-    const fetchVideos = async () => {
-      const data = await getAllNotes(1, 10, "title", "dec", ""); // 👈 calling your function here
+    const fetchNotes = async () => {
+      const data = await getAllNotes(1, 4, "title", "dec", searchTerm); // 👈 calling your function here
       if (data) {
         console.log(data);
 
         setNotes(data);
       }
     };
-    fetchVideos();
+    fetchNotes();
 
-  }, []);
+  }, [searchTerm]);
 
 
   return (

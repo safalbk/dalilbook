@@ -4,20 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-
 @Getter
 @Setter
-
-public class TopicResponseDto {
+public class ImageResponseDto {
     private String id;
 
     private String title;
+
+    private String url;
 
     private String description;
 
     private List<String> tags;
 
-    private List<String> videoIds;
-    private List<String> imageIds;
-    private List<String> noteIds;
 }

@@ -1,5 +1,6 @@
 package com.arif.dalilbook.model;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -11,13 +12,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-
 @Entity
 @EntityListeners(org.springframework.data.jpa.domain.support.AuditingEntityListener.class)
-
 @Getter
 @Setter
-public class Photo {
+public class Image {
 
     @Id
     private String id;
@@ -32,17 +31,9 @@ public class Photo {
     private String description;
 
     @ElementCollection
-    @CollectionTable(name = "photo_tags", joinColumns = @JoinColumn(name = "photo_id"))
+    @CollectionTable(name = "image_tags", joinColumns = @JoinColumn(name = "image_id"))
     @Column(name = "tag")
     private List<String> tags;
-
-
-    @PrePersist
-    public void generateId() {
-        if (this.id == null) {
-            this.id = UUID.randomUUID().toString();
-        }
-    }
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -52,5 +43,14 @@ public class Photo {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
+
+
+
+    @PrePersist
+    public void generateId() {
+        if (this.id == null) {
+            this.id = UUID.randomUUID().toString();
+        }
+    }
 
 }

@@ -31,6 +31,31 @@ public class Topic {
     @Column(name = "tag")
     private List<String> tags;
 
+
+    @ManyToMany
+    @JoinTable(
+            name = "topic_video",
+            joinColumns = @JoinColumn(name = "topic_id"),
+            inverseJoinColumns = @JoinColumn(name = "video_id")
+    )
+    private List<Video> videos;
+
+    @ManyToMany
+    @JoinTable(
+            name = "topic_image",
+            joinColumns = @JoinColumn(name = "topic_id"),
+            inverseJoinColumns = @JoinColumn(name = "image_id")
+    )
+    private List<Image> images;
+
+    @ManyToMany
+    @JoinTable(
+            name = "topic_note",
+            joinColumns = @JoinColumn(name = "topic_id"),
+            inverseJoinColumns = @JoinColumn(name = "note_id")
+    )
+    private List<Note> notes;
+
     @PrePersist
     public void generateId() {
         if (this.id == null) {

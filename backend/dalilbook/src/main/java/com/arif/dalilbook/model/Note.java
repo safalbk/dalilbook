@@ -32,7 +32,6 @@ public class Note {
     @Column(name = "tag")
     private List<String> tags;
 
-
     @Lob
     @Column(columnDefinition = "LONGTEXT")
     @NotNull

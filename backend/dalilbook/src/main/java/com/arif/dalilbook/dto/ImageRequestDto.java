@@ -5,10 +5,10 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 @Getter
 @Setter
-public class PhotoRequestDto {
-
+public class ImageRequestDto {
     @NotNull
     private String title;
 
@@ -18,9 +18,5 @@ public class PhotoRequestDto {
     @Size(max = 100, message = "description exceded")
     private String description;
 
-    @NotNull
-    private String tags;
-
-
-
+    private List<String> tags;
 }

@@ -20,10 +20,16 @@ import videodata from "/src/dataset/videodata.json"; // adjust path as needed
 import photosdata from "/src/dataset/photosdata.json"; // adjust path as needed
 
 import { getAllVideos } from '/src/services/videoService.js';
+import { getallImages } from '/src/services/ImageService.js';
+import { getAllNotes } from '/src/services/NoteService.js';
+
+
 function AllListPage() {
-  
+
   const { searchTerm } = useOutletContext();
   const [videos, setVideos] = useState([]);
+  const [images, setImages] = useState([]);
+  const [notes, setNotes] = useState([]);
 
   const navigate = useNavigate();
 
@@ -31,24 +37,43 @@ function AllListPage() {
     navigate("/topicpage");
   };
 
-  const navVideoPlayer = (id,url) => {
+  const navVideoPlayer = (id, url) => {
     console.log("video id: " + id);
-    navigate("/videopage/" + id );
+    navigate("/videopage/" + id);
   };
 
+  const fetchVideos = async () => {
+    const data = await getAllVideos(); // 👈 calling your function here
+    if (data) {
+      console.log(data);
 
+      setVideos(data);
+    }
+  };
+  const fetchImages = async () => {
+    const data = await getallImages(1, 4, "title", "dec", searchTerm); // 👈 calling your function here
+    if (data) {
+      console.log(data);
+
+      setImages(data);
+    }
+  };
+  const fetchNotes = async () => {
+    const data = await getAllNotes(1, 4, "title", "dec", searchTerm); // 👈 calling your function here
+    if (data) {
+      console.log("notes");
+      
+      console.log(data);
+
+      setNotes(data);
+    }
+  };
   useEffect(() => {
-    const fetchVideos = async () => {
-      const data = await getAllVideos(); // 👈 calling your function here
-      if (data) {
-        console.log(data);
-        
-        setVideos(data);
-      }
-    };
-    fetchVideos();
 
-  }, []); 
+    fetchNotes();
+    fetchVideos();
+    fetchImages()
+  }, [searchTerm]);
 
 
   return (
@@ -102,7 +127,7 @@ function AllListPage() {
       <div className='grid grid-cols-1 '>
 
         {/* notes card */}
-        {filterNotes(notesData.data, searchTerm).slice(0, 2).map((topic, index) => (
+        {filterNotes(notes, searchTerm).slice(0, 2).map((topic, index) => (
           <div key={index} onClick={navTopic} className="cursor-pointer">
             <NotesCard
               title={topic.title}
@@ -138,9 +163,9 @@ function AllListPage() {
               description={video.description}
               tags={video.tags}
               thumbnail={video.url}
-              onImageClick={() => navVideoPlayer(video.id,video.url)}
+              onImageClick={() => navVideoPlayer(video.id, video.url)}
             />
- 
+
 
           </div>
         ))}
@@ -161,7 +186,7 @@ function AllListPage() {
 
       {/* Images container */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4  mt-4  '>
-        {filterPhotos(photosdata.data, searchTerm).slice(0, 2).map((topic, index) => (
+        {filterPhotos(images, searchTerm).slice(0, 2).map((topic, index) => (
           <div key={index} className="cursor-pointer">
             <ImageCard
               title={topic.title}

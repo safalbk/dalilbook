@@ -19,9 +19,10 @@ import VideoFrameCapture from './components/ThubnailGenerator/VideoFrameCapture'
 import DirectS3Upload from './components/VideoUpload/DirectS3Upload';
 import Notes from './pages/Note/Notes';
 import CreateNotePage from './pages/Note/CreateNotePage';
+import DirectS3ImageUpload from './components/ImageUpload/DirectS3ImageUpload';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0) 
 
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
 
            <Route path="/notes/edit/:id" element={<CreateNotePage />} />
           <Route path="/videos" element={<Videos />} />
+          <Route path="/images" element={<DirectS3ImageUpload />} />
           <Route path="/topicpage" element={<TopicPage />} />
           <Route path="/videopage/:id" element={<VideoPlayerPage />} />
           <Route path="/tum" element={<VideoFrameCapture />} />

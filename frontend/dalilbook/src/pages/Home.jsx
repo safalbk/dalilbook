@@ -15,6 +15,7 @@ import { filterNotes, filterPhotos, filterVideos } from '../services/filterData.
 import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 import videodata from "/src/dataset/videodata.json"; // adjust path as needed
 import photosdata from "/src/dataset/photosdata.json"; // adjust path as needed
+
 function Home() {
   // console.log("haii");
   // console.log(notesData.data);
