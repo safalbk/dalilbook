@@ -6,6 +6,7 @@ import com.arif.dalilbook.dto.VideoResponseDto;
 import com.arif.dalilbook.mapper.VideoMapper;
 import com.arif.dalilbook.model.Video;
 import com.arif.dalilbook.repository.VideoRepository;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,9 +23,17 @@ public class VideoService {
 
     }
 
-    public List<VideoResponseDto> getVideos(){
-        List<Video> videos = videoRepository.findAll();
-        return videos.stream().map(VideoMapper::toDto).toList();
+    public List<VideoResponseDto> getVideos(Pageable pageable, String search){
+
+        if (search==null){
+            List<Video> videos = videoRepository.findAll(pageable).getContent();
+            return videos.stream().map(VideoMapper::toDto).toList();
+        }else
+        {
+            List<Video> videos = videoRepository.findByTitle(search,pageable).getContent();
+            return videos.stream().map(VideoMapper::toDto).toList();
+        }
+
     }
 
     public VideoResponseDto getVideoById(String id){

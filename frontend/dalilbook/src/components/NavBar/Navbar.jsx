@@ -34,9 +34,14 @@ function NavBar() {
                     <NavLink to="/topics" className={linkClasses}>
                         Topics
                     </NavLink>
-
+                    <NavLink to="/notes" className={linkClasses}>
+                                            Notes
+                                        </NavLink>
                     <NavLink to="/videos" className={linkClasses}>
                         Videos
+                    </NavLink>
+                    <NavLink to="/images" className={linkClasses}>
+                        Images
                     </NavLink>
                     <NavLink to="/e-books" className={linkClasses}>
                         E-books
@@ -91,6 +96,15 @@ function NavBar() {
                     }
                 >
                     Topics
+                </NavLink>
+                 <NavLink
+                    to="/notes"
+                    className={({ isActive }) =>
+                        `text-[#757575]  font-medium text-lg px-4 block my-2 w-full h-16 flex items-center ${isActive ? "bg-[#F5F5F5] text-gray-800 font-bold" : ""
+                        }`
+                    }
+                >
+                    Notes
                 </NavLink>
                 <NavLink
                     to="/videos"

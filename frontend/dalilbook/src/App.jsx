@@ -17,9 +17,12 @@ import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 import ThumGenerator from './components/ThubnailGenerator/ThumGenerator';
 import VideoFrameCapture from './components/ThubnailGenerator/VideoFrameCapture';
 import DirectS3Upload from './components/VideoUpload/DirectS3Upload';
+import Notes from './pages/Note/Notes';
+import CreateNotePage from './pages/Note/CreateNotePage';
+import DirectS3ImageUpload from './components/ImageUpload/DirectS3ImageUpload';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0) 
 
   return (
     <>
@@ -34,20 +37,20 @@ function App() {
             <Route path="allvideos" element={<VideoListPage />} />
             <Route path="allnotes" element={<NotesListPage />} />
             <Route path="allimages" element={<ImagesListPage />} />
-
           </Route>
 
           {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/topics" element={<Topic />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/topicpage" element={<TopicPage />} />
+           <Route path="/notes" element={<Notes />} />
+           <Route path="/notes/create" element={<CreateNotePage />} />
 
+           <Route path="/notes/edit/:id" element={<CreateNotePage />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/images" element={<DirectS3ImageUpload />} />
+          <Route path="/topicpage" element={<TopicPage />} />
           <Route path="/videopage/:id" element={<VideoPlayerPage />} />
           <Route path="/tum" element={<VideoFrameCapture />} />
-
           <Route path="/s3upload" element={<DirectS3Upload />} />
-
-
 
         </Routes>
       </BrowserRouter>

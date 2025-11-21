@@ -15,6 +15,7 @@ import { filterNotes, filterPhotos, filterVideos } from '../services/filterData.
 import notesData from "/src/dataset/notesdata.json"; // adjust path as needed
 import videodata from "/src/dataset/videodata.json"; // adjust path as needed
 import photosdata from "/src/dataset/photosdata.json"; // adjust path as needed
+
 function Home() {
   // console.log("haii");
   // console.log(notesData.data);
@@ -73,7 +74,7 @@ function Home() {
         <div className="sm:col-span-5 md:col-span-7 bg-gray-100 p-4 min-h-screen">
           {/* Dashboard row  */}
           <div className='w-full h-10  flex items-center justify-center'>
-            <h1 className='font-bold text-2xl text-gray-800 '>Dashboard</h1>
+            <h1 className='font-bold text-2xl text-gray-800 '>Dashboard </h1>
           </div>
 
           {/* search row */}
@@ -92,7 +93,7 @@ function Home() {
 
           </div>
           <Outlet context={{ searchTerm }} />
-
+         
 
           {/* end main content   */}
         </div>

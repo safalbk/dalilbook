@@ -12,6 +12,8 @@ public class VideoMapper {
         videoDto.setDescription(video.getDescription());
         videoDto.setUrl(video.getUrl());
         videoDto.setTags(video.getTags());
+
+
         return videoDto;
 
     }
